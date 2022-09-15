@@ -1,0 +1,1 @@
+npx love.js mapGenerator.love ./dist/mapGeneratorJS -c
