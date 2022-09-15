@@ -12,7 +12,9 @@ rename .zip file to .love
 Install Love2d.
 Double click on the .love file.
 
-2) To transpile into javascript for deployment:
+## 2) Or transpile into javascript for deployment:
+
+Warning: This mode is higly experimental and contains numerous bugs.
 
 https://kalis.me/building-love2d-games-web-docker/
 
