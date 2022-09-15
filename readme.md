@@ -1,5 +1,7 @@
 A simpe map tool to generate maps and scenarios for tabletop miniature wargames.
 
+![Alt text](/img/01.png?raw=true "Screenshot")
+
 To run the program:
 
 Firstmake .zip file of the entire contents of this repository.
@@ -11,6 +13,8 @@ Install Love2d.
 Double click on the .love file.
 
 2) To transpile into javascript for deployment:
+
+This option is still in stage of eraly development so there are lots of bugs. 
 
 https://kalis.me/building-love2d-games-web-docker/
 
@@ -28,4 +32,4 @@ simpleHttpServer 3000
 
 Go to localhost:3000 in your browser to use the map generator.
 
-If it works deploy to heroku or whereeer you choose.
+If it works deploy to heroku or whereer you choose.
