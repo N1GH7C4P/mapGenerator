@@ -5,16 +5,21 @@ require "src/sounds"
 require "src/scenario"
 require "src/buttons"
 
-width = 720
-height = 480
-t = 0
-highlightedTerrainPieceNumber = 0
-font = love.graphics.getFont()
-world = love.physics.newWorld(0, 0, true)
-canvas = love.graphics.newCanvas(width,height)
-terrainPiecesAdded = 0
-numberOfterrainPiecesOnMap = 0
-numberOfButtons = 7
+terrainFeatures = require "src/terrain_features"
+terrainShapes = require "src/terrain_shapes"
+
+function initSession()
+    width = 720
+    height = 480
+    t = 0
+    highlightedTerrainPieceNumber = 0
+    font = love.graphics.getFont()
+    world = love.physics.newWorld(0, 0, true)
+    canvas = love.graphics.newCanvas(width,height)
+    terrainPiecesAdded = 0
+    numberOfterrainPiecesOnMap = 0
+    numberOfButtons = 7
+end
 
 function love.update(dt)
     world:update(dt)
@@ -44,12 +49,13 @@ function love.draw()
 end
 
 function love.load()
+    print(terrainFeatures.magicalMystery)
+    initSession()
     generateScenarioLibrary()
     generateButtons()
     rollScenario()
     print(currentScenario.name)
     generateWorldBoundaries(width,height)
-    terrainFeatures = generateTerrainFeatures()
     print('Terrain features generated.')
     terrainPieces = randomizeTerrainPieces()
     --sortTerrainPieces(terrainPieces, compareTerrainPieces)

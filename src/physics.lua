@@ -22,7 +22,7 @@ function addRiver(number, quarter)
     local oldBodyY = y
 
     objects[number].body[1] = love.physics.newBody(world, x, y, "static")
-    objects[number].shape = love.physics.newRectangleShape(terrainPieces[number].w,terrainPieces[number].h)
+    objects[number].shape = love.physics.newRectangleShape(terrainPieces[number].shape.w,terrainPieces[number].shape.h)
     objects[number].fixture[1] = love.physics.newFixture(objects[number].body[1], objects[number].shape, 1)
     
     if(quarter == 1) then
@@ -42,8 +42,8 @@ function addRiver(number, quarter)
             oldBodyX = x
             oldBodyY = y
             
-            print('x: ',x)
-            print('y: ',y)
+            --print('x: ',x)
+            --print('y: ',y)
         end
     elseif(quarter == 2) then
         while(oldBodyX < width) do
@@ -62,8 +62,8 @@ function addRiver(number, quarter)
             oldBodyX = x
             oldBodyY = y
             
-            print('x: ',x)
-            print('y: ',y)
+            --print('x: ',x)
+            --print('y: ',y)
         end
     elseif(quarter == 3) then
         while(oldBodyY < height) do
@@ -82,8 +82,8 @@ function addRiver(number, quarter)
             oldBodyX = x
             oldBodyY = y
             
-            print('x: ',x)
-            print('y: ',y)
+            --print('x: ',x)
+            --print('y: ',y)
         end
     elseif(quarter == 4) then
         while(oldBodyX < width) do
@@ -102,8 +102,8 @@ function addRiver(number, quarter)
             oldBodyX = x
             oldBodyY = y
             
-            print('x: ',x)
-            print('y: ',y)
+            --print('x: ',x)
+            --print('y: ',y)
         end
     end
 end
@@ -139,17 +139,18 @@ function addFixture(number)
         addRiver(number, love.math.random(4))
     elseif (terrainPieces[number][1] == 'Mysterious Forest') then
         objects[number].body[1] = love.physics.newBody(world, objects[number].x, objects[number].y, "dynamic")
-        objects[number].shape = love.physics.newPolygonShape(terrainPieces[number].points[1], terrainPieces[number].points[2], terrainPieces[number].points[3], terrainPieces[number].points[4],terrainPieces[number].points[5], terrainPieces[number].points[6], terrainPieces[number].points[7], terrainPieces[number].points[8], terrainPieces[number].points[9], terrainPieces[number].points[10], terrainPieces[number].points[11], terrainPieces[number].points[12])
+        objects[number].shape = love.physics.newPolygonShape(terrainPieces[number].shape.points[1], terrainPieces[number].shape.points[2], terrainPieces[number].shape.points[3], terrainPieces[number].shape.points[4],terrainPieces[number].shape.points[5], terrainPieces[number].shape.points[6], terrainPieces[number].shape.points[7], terrainPieces[number].shape.points[8], terrainPieces[number].shape.points[9], terrainPieces[number].shape.points[10], terrainPieces[number].shape.points[11], terrainPieces[number].shape.points[12])
         objects[number].fixture[1] = love.physics.newFixture(objects[number].body[1], objects[number].shape, 1)
         objects[number].fixture[1]:setRestitution(0.1)
     elseif (terrainPieces[number][1] == 'Ordinary Hill' or terrainPieces[number][1] == 'Anvil of Vaul' or terrainPieces[number][1] == 'Scree Slope' or terrainPieces[number][1] == 'Temple of Skulls') then
         objects[number].body[1] = love.physics.newBody(world, objects[number].x, objects[number].y, "dynamic")
-        objects[number].shape = love.physics.newPolygonShape(terrainPieces[number].points[1], terrainPieces[number].points[2], terrainPieces[number].points[3], terrainPieces[number].points[4],terrainPieces[number].points[5], terrainPieces[number].points[6], terrainPieces[number].points[7], terrainPieces[number].points[8], terrainPieces[number].points[9], terrainPieces[number].points[10], terrainPieces[number].points[11], terrainPieces[number].points[12])
+        objects[number].shape = love.physics.newPolygonShape(terrainPieces[number].shape.points[1], terrainPieces[number].shape.points[2], terrainPieces[number].shape.points[3], terrainPieces[number].shape.points[4],terrainPieces[number].shape.points[5], terrainPieces[number].shape.points[6], terrainPieces[number].shape.points[7], terrainPieces[number].shape.points[8], terrainPieces[number].shape.points[9], terrainPieces[number].shape.points[10], terrainPieces[number].shape.points[11], terrainPieces[number].shape.points[12])
         objects[number].fixture[1] = love.physics.newFixture(objects[number].body[1], objects[number].shape, 1)
         objects[number].fixture[1]:setRestitution(0.1)
     else
+        print("Adding fixture", terrainPieces[number][1])
         objects[number].body[1] = love.physics.newBody(world, objects[number].x, objects[number].y, "dynamic")
-        objects[number].shape = love.physics.newRectangleShape(0, 0, terrainPieces[number].w,terrainPieces[number].h, love.math.random(360))
+        objects[number].shape = love.physics.newRectangleShape(0, 0, terrainPieces[number].shape.w,terrainPieces[number].shape.h, love.math.random(360))
         objects[number].fixture[1] = love.physics.newFixture(objects[number].body[1], objects[number].shape, 1)
         objects[number].fixture[1]:setRestitution(0.1)
     end

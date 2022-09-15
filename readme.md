@@ -7,7 +7,7 @@ To run the program:
 Firstmake .zip file of the entire contents of this repository.
 rename .zip file to .love
 
-## 1) Use the mapgenerator localy
+## 1) Use the mapgenerator locally
 
 Install Love2d.
 Double click on the .love file.

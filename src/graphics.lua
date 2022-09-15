@@ -10,7 +10,7 @@ end
 
 function drawShapes()
     for i = 1, numberOfterrainPiecesOnMap do
-        love.graphics.setColor(terrainPieces[i].color)
+        love.graphics.setColor(terrainPieces[i].shape.color)
         for j = 1, objects[i].numberOfBodies do
             love.graphics.polygon("fill", objects[i].body[j]:getWorldPoints(objects[i].shape:getPoints()))
         end
@@ -29,7 +29,7 @@ function drawButtons()
 end
 
 function drawSidebar()
-    love.graphics.setColor(0,0,0,1)
+    love.graphics.setColor(0.2,0.1,0.4,1)
     love.graphics.rectangle('fill',width,0,200,height)
     love.graphics.rectangle('fill',0,height,width+200,200)
     love.graphics.setColor(1,1,1,1)
