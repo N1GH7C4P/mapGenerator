@@ -14,7 +14,7 @@ function generateSteadfastSanctum(i, x, y)
     objects[i] = {}
     objects[i].x = x
     objects[i].y = y
-    j = love.math.random(0,5)
+    local j = love.math.random(0,5)
     terrainPieces[i] = terrainFeatures.steadfastSanctum[j]
     terrainPieces[i].shape = terrainShapes.steadfastSanctum[j]
 end
@@ -37,8 +37,9 @@ function generateObstacles(i, x, y)
     objects[i].x = x
     objects[i].y = y
 
-    terrainPieces[i] = terrainFeatures.obstacles[love.math.random(0,4)]
-    terrainPieces[i].shape = terrainShapes.obstacles
+    local j = love.math.random(0,4)
+    terrainPieces[i] = terrainFeatures.obstacles[j]
+    terrainPieces[i].shape = terrainShapes.obstacles[j]
 end
 
 function generateSettlementOfOrder(i, x, y)
@@ -78,8 +79,9 @@ function generateSinisterStructure(i, x, y)
     objects[i].x = x
     objects[i].y = y
 
-    terrainPieces[i] = terrainFeatures.sinisterStructure[love.math.random(0,5)]
-    terrainPieces[i].shape = terrainShapes.sinisterStructure
+    local j = love.math.random(0,5)
+    terrainPieces[i] = terrainFeatures.sinisterStructure[j]
+    terrainPieces[i].shape = terrainShapes.sinisterStructure[j]
 end
 
 function generateHill(i, x, y)
