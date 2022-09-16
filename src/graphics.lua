@@ -12,7 +12,12 @@ function drawShapes()
     for i = 1, numberOfterrainPiecesOnMap do
         love.graphics.setColor(terrainPieces[i].shape.color)
         for j = 1, objects[i].numberOfBodies do
-            love.graphics.polygon("fill", objects[i].body[j]:getWorldPoints(objects[i].shape:getPoints()))
+            if(terrainPieces[i].shape.shapeType == "round") then
+                local x, y = objects[i].body[j]:getWorldPoints(objects[i].shape:getPoint())
+                love.graphics.circle("fill", x, y, terrainPieces[i].shape.w, 10)
+            else
+                love.graphics.polygon("fill", objects[i].body[j]:getWorldPoints(objects[i].shape:getPoints()))
+            end
         end
         love.graphics.setColor(1,1,1,1)
         love.graphics.print(terrainPieces[i][1],objects[i].body[1]:getX(),objects[i].body[1]:getY())

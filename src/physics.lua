@@ -138,17 +138,25 @@ function addFixture(number)
     if(terrainPieces[number][1] == 'Mysterious River') then
         addRiver(number, love.math.random(4))
     elseif (terrainPieces[number][1] == 'Mysterious Forest') then
+        print("Adding irregular fixture", terrainPieces[number][1])
         objects[number].body[1] = love.physics.newBody(world, objects[number].x, objects[number].y, "dynamic")
         objects[number].shape = love.physics.newPolygonShape(terrainPieces[number].shape.points[1], terrainPieces[number].shape.points[2], terrainPieces[number].shape.points[3], terrainPieces[number].shape.points[4],terrainPieces[number].shape.points[5], terrainPieces[number].shape.points[6], terrainPieces[number].shape.points[7], terrainPieces[number].shape.points[8], terrainPieces[number].shape.points[9], terrainPieces[number].shape.points[10], terrainPieces[number].shape.points[11], terrainPieces[number].shape.points[12])
         objects[number].fixture[1] = love.physics.newFixture(objects[number].body[1], objects[number].shape, 1)
         objects[number].fixture[1]:setRestitution(0.1)
     elseif (terrainPieces[number][1] == 'Ordinary Hill' or terrainPieces[number][1] == 'Anvil of Vaul' or terrainPieces[number][1] == 'Scree Slope' or terrainPieces[number][1] == 'Temple of Skulls') then
+        print("Adding irregular fixture", terrainPieces[number][1])
         objects[number].body[1] = love.physics.newBody(world, objects[number].x, objects[number].y, "dynamic")
         objects[number].shape = love.physics.newPolygonShape(terrainPieces[number].shape.points[1], terrainPieces[number].shape.points[2], terrainPieces[number].shape.points[3], terrainPieces[number].shape.points[4],terrainPieces[number].shape.points[5], terrainPieces[number].shape.points[6], terrainPieces[number].shape.points[7], terrainPieces[number].shape.points[8], terrainPieces[number].shape.points[9], terrainPieces[number].shape.points[10], terrainPieces[number].shape.points[11], terrainPieces[number].shape.points[12])
         objects[number].fixture[1] = love.physics.newFixture(objects[number].body[1], objects[number].shape, 1)
         objects[number].fixture[1]:setRestitution(0.1)
+    elseif (terrainPieces[number].shape.shapeType == "round") then
+        print("Adding round fixture", terrainPieces[number][1])
+        objects[number].body[1] = love.physics.newBody(world, objects[number].x, objects[number].y, "dynamic")
+        objects[number].shape = love.physics.newCircleShape(terrainPieces[number].shape.w)
+        objects[number].fixture[1] = love.physics.newFixture(objects[number].body[1], objects[number].shape, 1)
+        objects[number].fixture[1]:setRestitution(0.1)
     else
-        print("Adding fixture", terrainPieces[number][1])
+        print("Adding rectangle fixture", terrainPieces[number][1])
         objects[number].body[1] = love.physics.newBody(world, objects[number].x, objects[number].y, "dynamic")
         objects[number].shape = love.physics.newRectangleShape(0, 0, terrainPieces[number].shape.w,terrainPieces[number].shape.h, love.math.random(360))
         objects[number].fixture[1] = love.physics.newFixture(objects[number].body[1], objects[number].shape, 1)

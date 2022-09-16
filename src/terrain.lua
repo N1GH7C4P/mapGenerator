@@ -14,8 +14,9 @@ function generateSteadfastSanctum(i, x, y)
     objects[i] = {}
     objects[i].x = x
     objects[i].y = y
-    terrainPieces[i] = terrainFeatures.steadfastSanctum[love.math.random(0,5)]
-    terrainPieces[i].shape = terrainShapes.steadfastSanctum
+    j = love.math.random(0,5)
+    terrainPieces[i] = terrainFeatures.steadfastSanctum[j]
+    terrainPieces[i].shape = terrainShapes.steadfastSanctum[j]
 end
 
 function generateBuilding(i, x, y)

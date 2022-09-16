@@ -2,12 +2,62 @@ terrainShapes = {}
 
 	terrainShapes.steadfastSanctum = {}
 
-	terrainShapes.steadfastSanctum.w = 16
-	terrainShapes.steadfastSanctum.h = 16
-	terrainShapes.steadfastSanctum.color = {1,0,1,1}
-	terrainShapes.steadfastSanctum.priority = 1
-	terrainShapes.steadfastSanctum.sx = 20
-	terrainShapes.steadfastSanctum.sy = 20
+    terrainShapes.steadfastSanctum[0] = {}
+
+	terrainShapes.steadfastSanctum[0].w = 64
+	terrainShapes.steadfastSanctum[0].h = 32
+	terrainShapes.steadfastSanctum[0].color = {0.8,0.8,0.8,1}
+	terrainShapes.steadfastSanctum[0].priority = 1
+	terrainShapes.steadfastSanctum[0].sx = 20
+	terrainShapes.steadfastSanctum[0].sy = 20
+    terrainShapes.steadfastSanctum[0].shapeType = "rectangle"
+
+    terrainShapes.steadfastSanctum[1] = {}
+
+    terrainShapes.steadfastSanctum[1].w = 64
+	terrainShapes.steadfastSanctum[1].h = 32
+	terrainShapes.steadfastSanctum[1].color = {0.8,0.8,0.1,1}
+	terrainShapes.steadfastSanctum[1].priority = 1
+	terrainShapes.steadfastSanctum[1].sx = 20
+	terrainShapes.steadfastSanctum[1].sy = 20
+    terrainShapes.steadfastSanctum[1].shapeType = "rectangle"
+
+    terrainShapes.steadfastSanctum[2] = {}
+
+    terrainShapes.steadfastSanctum[2].w = 32
+	terrainShapes.steadfastSanctum[2].h = 32
+	terrainShapes.steadfastSanctum[2].color = {1,0,1,1}
+	terrainShapes.steadfastSanctum[2].priority = 1
+	terrainShapes.steadfastSanctum[2].sx = 20
+	terrainShapes.steadfastSanctum[2].sy = 20
+    terrainShapes.steadfastSanctum[2].shapeType = "round"
+
+    terrainShapes.steadfastSanctum[3] = {}
+
+    terrainShapes.steadfastSanctum[3].w = 16
+	terrainShapes.steadfastSanctum[3].h = 16
+	terrainShapes.steadfastSanctum[3].color = {1,0,1,1}
+	terrainShapes.steadfastSanctum[3].priority = 1
+	terrainShapes.steadfastSanctum[3].sx = 20
+	terrainShapes.steadfastSanctum[3].sy = 20
+
+    terrainShapes.steadfastSanctum[4] = {}
+
+    terrainShapes.steadfastSanctum[4].w = 16
+	terrainShapes.steadfastSanctum[4].h = 16
+	terrainShapes.steadfastSanctum[4].color = {1,0,1,1}
+	terrainShapes.steadfastSanctum[4].priority = 1
+	terrainShapes.steadfastSanctum[4].sx = 20
+	terrainShapes.steadfastSanctum[4].sy = 20
+
+    terrainShapes.steadfastSanctum[5] = {}
+
+    terrainShapes.steadfastSanctum[5].w = 16
+	terrainShapes.steadfastSanctum[5].h = 16
+	terrainShapes.steadfastSanctum[5].color = {1,0,1,1}
+	terrainShapes.steadfastSanctum[5].priority = 1
+	terrainShapes.steadfastSanctum[5].sx = 20
+	terrainShapes.steadfastSanctum[5].sy = 20
 
 	terrainShapes.building = {}
 
